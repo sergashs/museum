@@ -3,7 +3,8 @@
   padding-right: 2rem;
   max-width: 140.1rem;
   width: 100%;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sr-only {
@@ -16,4 +17,9 @@
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+.h1 {
+  font-size: 6.6rem;
+  line-height: 1.2;
 }

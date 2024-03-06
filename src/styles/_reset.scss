@@ -56,6 +56,7 @@ input[type="submit"] {
 }
 
 button {
+  font-family: inherit;
   background: transparent;
   border: none;
   outline: none;
@@ -95,16 +96,4 @@ input {
 
 #main {
   flex: 1;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  svg {
-    width: 1.6rem !important;
-    height: 1.6rem !important;
-  }
-
-  &::after {
-    display: none;
-  }
 }
