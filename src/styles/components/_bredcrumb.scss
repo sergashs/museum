@@ -1,0 +1,50 @@
+.breadcrumb {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: #042a30;
+  text-transform: uppercase;
+
+  @include breakpoint(lg, max) {
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .breadcrumb-item {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0.4rem;
+
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        display: block;
+        width: 1.6rem;
+        height: 1.6rem;
+        margin-left: 0.75rem;
+        margin-right: 0.55rem;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 8L0.5 8' stroke='%23424242' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.6427 8.21437L12.2116 10.273C11.6784 10.593 11 10.2089 11 9.58705L11 6.41295C11 5.79112 11.6784 5.40703 12.2116 5.72696L15.6427 7.78563C15.8045 7.88273 15.8045 8.11727 15.6427 8.21437Z' fill='%23424242'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+      }
+    }
+
+    &.active {
+      color: #a3a3a3;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  span {
+    color: #a5c4d3;
+  }
+}

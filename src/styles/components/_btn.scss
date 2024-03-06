@@ -1,0 +1,100 @@
+.btn {
+  &.btn-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    color: #042a30;
+
+    svg,
+    img {
+      margin-left: 0.8rem;
+    }
+
+    &:hover {
+      color: #f1582b;
+    }
+
+    &:active {
+      color: #cd380c;
+    }
+
+    &:disabled {
+      color: #a5b1b2;
+    }
+
+    .btn-title {
+      @include breakpoint(md, max) {
+        display: none;
+      }
+    }
+  }
+
+  &.btn-danger {
+    color: white;
+    background: #f1582b;
+
+    &:hover {
+      background: #cd380c;
+    }
+
+    &:active {
+      background: #a92f0b;
+    }
+
+    &:disabled {
+      background: #d6dcdd;
+    }
+  }
+
+  &.font-style-1 {
+    font-family: $font-second;
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  &.btn-md {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.4rem;
+    padding: 1rem 2.75rem;
+    border-radius: 0.8rem;
+
+    img {
+      margin-right: 0.8rem;
+    }
+  }
+
+  &.btn-icon-white {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background: white;
+
+    &.gray {
+      background: #f2f5f5;
+    }
+
+    &:hover {
+      color: #063f52;
+      background: #abecff;
+    }
+
+    &:active {
+      color: white;
+      background: #146b87;
+    }
+
+    &:disabled {
+      color: white;
+      background: #d6dcdd;
+    }
+  }
+
+  &.btn-icon-md {
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 0.8rem;
+  }
+}
