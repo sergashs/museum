@@ -1,0 +1,65 @@
+.section-1 {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 12vh;
+  padding-right: 12vh;
+  padding-bottom: 15.9vh;
+  min-width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+
+  .container {
+    position: relative;
+    max-width: 111rem;
+  }
+
+  .h1 {
+    font-weight: 400;
+    font-size: 6.6rem;
+    line-height: 1.2;
+  }
+
+  .section-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(black, 0.6);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &::before {
+      opacity: 0.8;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 75.43%, rgba(0, 0, 0, 0.8) 100%);
+    }
+
+    &::after {
+      opacity: 0.5;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35.89%, rgba(0, 0, 0, 0.5) 100%);
+    }
+  }
+
+  .decor {
+    position: absolute;
+    pointer-events: none;
+
+    &.decor-1 {
+      left: -3.1rem;
+      bottom: -23.1rem;
+      width: 37.8rem;
+      height: 88.7rem;
+      background: url("#{$images}decor-01.png");
+    }
+  }
+}

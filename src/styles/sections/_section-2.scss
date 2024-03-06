@@ -1,0 +1,149 @@
+.section-2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 13.4rem;
+  padding-left: 61.1rem;
+  padding-right: 12vh;
+  background: #2f2722;
+
+  .container {
+    max-width: 100%;
+  }
+
+  .block-preview {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-30%, -50%);
+    max-width: 51.9rem;
+    padding: 9rem 2.3rem 9.2rem 5rem;
+    background: #2f2722;
+
+    .text-holder {
+      font-size: 1.6rem;
+      line-height: 1.6;
+      color: #aca28f;
+
+      p {
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .btn-preview {
+    svg {
+      transition: $transition;
+    }
+
+    &:hover {
+      svg {
+        transform: translateX(3.8rem);
+      }
+    }
+  }
+
+  .card {
+    display: flex;
+
+    .title {
+      font-weight: 400;
+    }
+
+    .img-holder {
+      width: 100%;
+      flex-shrink: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .text-holder {
+      font-size: 1.6rem;
+      line-height: 1.6;
+
+      p {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &.card-1,
+    &.card-2 {
+      .img-holder {
+        margin-right: 6.05rem;
+      }
+
+      .content-holder {
+        max-width: 48rem;
+      }
+    }
+
+    &.card-1 {
+      align-items: center;
+
+      .title {
+        margin-bottom: 1.2rem;
+        font-size: 4.9rem;
+        line-height: 1.4;
+      }
+
+      .year {
+        margin-bottom: 2rem;
+        font-size: 3.1rem;
+        line-height: 1.39;
+      }
+
+      .img-holder {
+        max-width: 48.6rem;
+      }
+    }
+
+    &.card-2 {
+      transform: translate(-10%, -16%);
+      align-items: flex-end;
+
+      .content-holder {
+        padding-bottom: 8.6rem;
+      }
+
+      .img-holder {
+        max-width: 44.1rem;
+        transform: rotate(-1.86deg);
+      }
+    }
+
+    &.card-3 {
+      align-items: center;
+
+      .title {
+        font-size: 3.2rem;
+        line-height: 1.4;
+      }
+
+      .img-holder {
+        max-width: 36.7rem;
+        margin-right: 6.2rem;
+        transform: rotate(1.78deg);
+      }
+
+      .content-holder {
+        max-width: 52rem;
+      }
+    }
+  }
+
+  .decor-1 {
+    position: absolute;
+    bottom: 0;
+    left: -30.5rem;
+    width: 71.2rem;
+    height: 23.2rem;
+    background: url("#{$images}decor-02.png");
+  }
+}
