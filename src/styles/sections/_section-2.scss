@@ -6,6 +6,7 @@
   padding-left: 61.1rem;
   padding-right: 12vh;
   background: #2f2722;
+  z-index: 1;
 
   .container {
     max-width: 100%;
@@ -145,5 +146,16 @@
     width: 71.2rem;
     height: 23.2rem;
     background: url("#{$images}decor-02.png");
+  }
+
+  .decor-2 {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 81.8rem;
+    height: 50.8rem;
+    background: url("#{$images}img-06.png");
+    z-index: -1;
   }
 }

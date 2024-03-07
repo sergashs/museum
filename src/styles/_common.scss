@@ -22,7 +22,17 @@
 .row {
   display: flex;
 
+  .col-4 {
+    width: 33.33333333%;
+  }
+
   .col-6 {
     width: 50%;
   }
+}
+
+.h2 {
+  font-weight: 400;
+  font-size: 4.4rem;
+  line-height: 1.4;
 }
