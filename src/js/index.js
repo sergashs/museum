@@ -73,7 +73,7 @@ function initSmoothScroll() {
 				const sectionLeft = section.offsetLeft;
 				const sectionRight = sectionLeft + section.offsetWidth;
 
-				if (scrollPosition >= (sectionLeft - 1) && scrollPosition < sectionRight) {
+				if (scrollPosition >= (sectionLeft - 3) && scrollPosition < sectionRight) {
 					const sectionClass = section.getAttribute('data-section');
 
 					navLinks.forEach((link) => {
@@ -88,7 +88,6 @@ function initSmoothScroll() {
 			});
 		};
 
-		handleScroll()
 
 		locoScroll.on('scroll', handleScroll);
 	}
