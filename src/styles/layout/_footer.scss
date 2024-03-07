@@ -1,2 +1,96 @@
 .footer {
+  .sections-nav {
+    position: fixed;
+    left: 50%;
+    bottom: 5.5rem;
+    transform: translateX(-50%);
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+
+    li {
+      &:not(:last-child) {
+        margin-right: 4rem;
+      }
+    }
+
+    .square {
+      position: absolute;
+      top: 50%;
+      left: -1.7rem;
+      transform: rotate(45deg) translateY(calc(-50% - 0.5rem));
+      width: 1.7rem;
+      height: 1.7rem;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 0.5rem;
+        height: 0.5rem;
+        background: #aca28f;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) scale(0);
+        display: block;
+        width: 1.7rem;
+        height: 1.7rem;
+        border: solid 0.1rem #aca28f;
+        transition: $transition;
+      }
+    }
+
+    a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      padding-left: 2rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(calc(-50% - 0.05rem));
+        width: 0;
+        height: 0.1rem;
+        background: #aca28f;
+        transition: $transition;
+      }
+
+      &:hover {
+        .square {
+          &::before {
+            transform: translateY(-50%) scale(1);
+          }
+        }
+      }
+
+      &.active {
+        padding-left: 4.7rem;
+
+        &::before {
+          width: 3.7rem;
+        }
+
+        .square {
+          &::before {
+            transform: translateY(-50%) scale(1);
+          }
+        }
+      }
+    }
+  }
 }

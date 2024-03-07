@@ -61,6 +61,40 @@ function initSmoothScroll() {
 
 	scrollToSection();
 
+
+	function trackScroll() {
+		const sections = document.querySelectorAll('[data-section]');
+		const navLinks = document.querySelectorAll('.sections-nav [scroll-to]');
+
+		const handleScroll = () => {
+			const scrollPosition = locoScroll.scroll.instance.scroll.x;
+
+			sections.forEach((section) => {
+				const sectionLeft = section.offsetLeft;
+				const sectionRight = sectionLeft + section.offsetWidth;
+
+				if (scrollPosition >= (sectionLeft - 1) && scrollPosition < sectionRight) {
+					const sectionClass = section.getAttribute('data-section');
+
+					navLinks.forEach((link) => {
+						const linkSection = link.getAttribute('scroll-to');
+						if (sectionClass === linkSection) {
+							link.classList.add('active');
+						} else {
+							link.classList.remove('active');
+						}
+					});
+				}
+			});
+		};
+
+		handleScroll()
+
+		locoScroll.on('scroll', handleScroll);
+	}
+
+	trackScroll();
+
 	// // GSAP integration
 	// gsap.registerPlugin(ScrollTrigger);
 

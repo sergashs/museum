@@ -55,9 +55,16 @@
     }
 
     .text-holder {
+      margin-bottom: 2.4rem;
       max-width: 37.9rem;
       font-size: 1.6rem;
       line-height: 1.6;
+
+      p {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
 
     .content-holder {
