@@ -149,7 +149,7 @@ function fullScreenMenu() {
 		y: 0,
 		ease: 'expo.inOut',
 	})
-	tl.to(links, { delay: 0.1, duration: 1, autoAlpha: 1, y: 0, opacity: 1, stagger: 0.15, ease: "power4.out" });
+	tl.to(links, { duration: 1, autoAlpha: 1, y: 0, opacity: 1, stagger: 0.15, ease: "power4.out" });
 	tl.reverse();
 
 
