@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding-top: 13.4rem;
+  padding-top: 13.4vh;
   padding-left: 20.1rem;
   padding-right: 12vh;
   background: #2f2722;
@@ -31,6 +31,14 @@
     .col-6 {
       @include breakpoint(xl, max) {
         width: 100%;
+      }
+
+      &:last-child {
+        @include breakpoint(xl, min) {
+          display: flex;
+          align-items: flex-start;
+          padding-top: 10vh;
+        }
       }
     }
   }
@@ -113,10 +121,16 @@
       }
 
       .img-holder {
-        max-width: 48.6rem;
-
         @include breakpoint(md, max) {
           max-width: 38.6rem;
+        }
+
+        @include breakpoint(xl, min) {
+          width: 60vh;
+        }
+
+        @include breakpoint(xl, max) {
+          max-width: 48.6rem;
         }
       }
     }
@@ -127,7 +141,7 @@
       }
 
       @include breakpoint(xl, min) {
-        transform: translate(-10%, -16%);
+        transform: translate(-10%, -16vh);
       }
 
       @include breakpoint(lg, max) {
@@ -139,11 +153,18 @@
       }
 
       .img-holder {
-        max-width: 44.1rem;
         transform: rotate(-1.86deg);
 
         @include breakpoint(md, max) {
           max-width: 34rem;
+        }
+
+        @include breakpoint(xl, min) {
+          width: 60vh;
+        }
+
+        @include breakpoint(xl, max) {
+          max-width: 44.1rem;
         }
       }
     }

@@ -23,13 +23,13 @@
 
     &.section-2 {
       @include breakpoint(xl, min) {
-        min-width: 331rem;
+        min-width: 344.2vh;
       }
     }
 
     &.section-3 {
       @include breakpoint(xl, min) {
-        min-width: 374.2vh;
+        min-width: 331rem;
       }
     }
   }
