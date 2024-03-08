@@ -54,6 +54,10 @@
       min-height: 70vh;
     }
 
+    @include breakpoint(md, max) {
+      min-height: 50vh;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -84,6 +88,10 @@
       font-weight: 400;
       font-size: 3.2rem;
       line-height: 1.4;
+
+      @include breakpoint(md, max) {
+        font-size: 2.3rem;
+      }
     }
 
     .text-holder {
@@ -91,6 +99,10 @@
       max-width: 37.9rem;
       font-size: 1.6rem;
       line-height: 1.6;
+
+      @include breakpoint(md, max) {
+        font-size: 1.4rem;
+      }
 
       p {
         &:last-child {
@@ -111,11 +123,15 @@
 
     &:hover {
       .content-holder {
-        transform: translateY(20%);
+        @include breakpoint(md, min) {
+          transform: translateY(20%);
+        }
       }
 
       &::after {
-        opacity: 0;
+        @include breakpoint(md, min) {
+          opacity: 0;
+        }
       }
     }
   }

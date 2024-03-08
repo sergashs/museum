@@ -15,6 +15,10 @@
     padding-bottom: 30rem;
   }
 
+  @include breakpoint(md, max) {
+    padding-bottom: 7rem;
+  }
+
   .container {
     max-width: 100%;
   }
@@ -196,6 +200,10 @@
     @include breakpoint(lg, max) {
       width: 41rem;
       height: 28rem;
+    }
+
+    @include breakpoint(md, max) {
+      display: none;
     }
   }
 }

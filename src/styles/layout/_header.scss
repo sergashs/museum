@@ -48,6 +48,10 @@
       @include breakpoint(md, max) {
         padding-top: 1rem;
       }
+
+      @include breakpoint(sm, max) {
+        display: none;
+      }
     }
   }
 
@@ -199,19 +203,10 @@
     }
 
     em {
-      min-width: 7.2rem;
       text-align: left;
       margin-top: 0.3rem;
       margin-left: 1rem;
       font-style: normal;
-
-      @include breakpoint(md, max) {
-        min-width: 6.2rem;
-      }
-
-      &.btn-close {
-        display: none;
-      }
     }
 
     &:hover {
@@ -244,13 +239,6 @@
           width: 100%;
         }
       }
-
-      .btn-title {
-        display: none;
-      }
-      .btn-close {
-        display: block;
-      }
     }
   }
 
@@ -269,6 +257,10 @@
     overflow: auto;
     z-index: 98;
     transform: translateY(-100%);
+
+    .inner-holder {
+      margin: auto;
+    }
 
     .menu {
       margin: 0;
