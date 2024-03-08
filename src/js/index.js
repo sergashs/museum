@@ -181,10 +181,18 @@ function fullScreenMenu() {
 		if (document.body.classList.contains('menu-opened')) {
 			tl.reversed(!tl.reversed());
 			document.body.classList.remove('menu-opened');
+
+			if (window.innerWidth < 1200) {
+				document.documentElement.style.removeProperty('overflow');
+			}
 		} else {
 			onStart();
 			tl.play();
 			document.body.classList.add('menu-opened');
+
+			if (window.innerWidth < 1200) {
+				document.documentElement.style.overflow = 'hidden';
+			}
 		}
 	});
 }
