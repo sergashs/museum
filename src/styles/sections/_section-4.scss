@@ -8,8 +8,35 @@
   .row {
     height: 100%;
 
+    @include breakpoint(xl, max) {
+      flex-wrap: wrap;
+    }
+
     .col-4 {
-      min-width: 50rem;
+      &:nth-child(1),
+      &:nth-child(2) {
+        @include breakpoint(xl, max) {
+          border-bottom: solid 0.1rem #4d4540;
+        }
+      }
+
+      &:last-child {
+        @include breakpoint(lg, max) {
+          border-top: solid 0.1rem #4d4540;
+        }
+      }
+
+      @include breakpoint(xl, min) {
+        min-width: 50rem;
+      }
+
+      @include breakpoint(xl, max) {
+        width: 50%;
+      }
+
+      @include breakpoint(lg, max) {
+        width: 100%;
+      }
     }
   }
 
@@ -21,6 +48,11 @@
     text-align: center;
     height: 100%;
     border-left: solid 0.1rem #4d4540;
+    background-size: cover;
+
+    @include breakpoint(xl, max) {
+      min-height: 70vh;
+    }
 
     &::before {
       content: "";

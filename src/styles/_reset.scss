@@ -2,7 +2,7 @@ html {
   font-size: 10px;
   overflow-x: hidden;
   height: -webkit-fill-available;
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 }
 
 html,
@@ -119,7 +119,10 @@ html.has-scroll-dragging {
   white-space: nowrap;
   height: 100vh;
   display: inline-block;
-  white-space: nowrap;
+
+  @include breakpoint(xl, max) {
+    width: 100%;
+  }
 }
 
 [data-scroll-direction="horizontal"] [data-scroll-section] {

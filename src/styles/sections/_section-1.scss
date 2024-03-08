@@ -4,9 +4,20 @@
   align-items: flex-end;
   padding-left: 12vh;
   padding-right: 12vh;
+  margin-right: 40vh;
   padding-bottom: 15.9vh;
   background-size: cover;
   background-position: center;
+  z-index: 2;
+
+  @include breakpoint(xl, max) {
+    padding: 0;
+    margin-right: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
 
   .container {
     position: relative;
@@ -17,6 +28,16 @@
     font-weight: 400;
     font-size: 6.6rem;
     line-height: 1.2;
+
+    @include breakpoint(xl, max) {
+      margin-bottom: 0;
+      text-align: center;
+      font-size: 4.4rem;
+    }
+
+    @include breakpoint(sm, max) {
+      font-size: 3.1rem;
+    }
   }
 
   .section-overlay {
@@ -58,6 +79,87 @@
       width: 37.8rem;
       height: 88.7rem;
       background: url("#{$images}decor-01.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include breakpoint(xl, max) {
+        left: 0;
+        bottom: 0;
+        width: 21rem;
+        height: 44rem;
+      }
+
+      @include breakpoint(lg, max) {
+        display: none;
+      }
+    }
+
+    &.decor-2 {
+      position: absolute;
+      bottom: 0;
+      right: -30.5rem;
+      width: 71.2rem;
+      height: 23.2rem;
+      background-image: url("#{$images}decor-02.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include breakpoint(xl, max) {
+        right: -15.5rem;
+        width: 41.2rem;
+        height: 21.2rem;
+        background-position: bottom;
+      }
+    }
+  }
+
+  .block-preview {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(70%, -50%);
+    max-width: 51.9rem;
+    padding: 9rem 2.3rem 9.2rem 5rem;
+    background: #2f2722;
+
+    @include breakpoint(xl, max) {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -2.2rem;
+      width: 2.9rem;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='30' height='421' viewBox='0 0 30 421' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M29.4886 0C29.4886 19.33 16.2861 35 0 35V386C16.2861 386 29.4886 401.67 29.4886 421H29.5V0H29.4886Z' fill='%232F2722'/%3E%3C/svg%3E%0A");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .text-holder {
+      font-size: 1.6rem;
+      line-height: 1.6;
+      color: #aca28f;
+
+      p {
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .btn-preview {
+      svg {
+        transition: $transition;
+      }
+
+      &:hover {
+        svg {
+          transform: translateX(3.8rem);
+        }
+      }
     }
   }
 }

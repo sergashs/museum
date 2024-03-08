@@ -39,14 +39,26 @@ function videoPlayer() {
 }
 
 function initSmoothScroll() {
+	let locoScroll;
+
 	const locoScrollDefaults = {
 		el: document.querySelector('[data-scroll-container]'),
 		smooth: true,
 		direction: "horizontal",
+		tablet: {
+			breakpoint: 1200
+		}
 	};
 
-	const locoScroll = new LocomotiveScroll(locoScrollDefaults);
+	function initLocoScroll() {
+		locoScroll = new LocomotiveScroll(locoScrollDefaults);
+		trackScroll();
+		scrollToSection();
+	}
 
+	function destroyLocoScroll() {
+		locoScroll.destroy();
+	}
 
 	function scrollToSection() {
 		const btns = document.querySelectorAll('[scroll-to]');
@@ -58,8 +70,6 @@ function initSmoothScroll() {
 			})
 		})
 	}
-
-	scrollToSection();
 
 
 	function trackScroll() {
@@ -88,33 +98,35 @@ function initSmoothScroll() {
 			});
 		};
 
-
 		locoScroll.on('scroll', handleScroll);
 	}
 
-	trackScroll();
 
-	// // GSAP integration
-	// gsap.registerPlugin(ScrollTrigger);
+	initLocoScroll();
 
-	// locoScroll.on("scroll", ScrollTrigger.update);
 
-	// ScrollTrigger.scrollerProxy(".smoothScroll", {
-	// 	scrollTop(value) {
-	// 		return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-	// 	},
-	// 	scrollLeft(value) {
-	// 		return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.x;
-	// 	},
+	window.removeEventListener('resize', locoScroll.scroll.checkResize, false)
+	window.addEventListener('resize', () => resizescroll(), false);
 
-	// 	getBoundingClientRect() {
-	// 		return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-	// 	},
+	console.log(locoScroll.scroll)
 
-	// 	pinType: document.querySelector(".smoothScroll").style.transform ? "transform" : "fixed"
-	// });
+	function resizescroll() {
+		if (!locoScroll.scroll.resizeTick) {
+			locoScroll.scroll.resizeTick = true;
+			requestAnimationFrame(() => {
+				locoScroll.scroll.checkContext();
+				updatescroll();
+				locoScroll.scroll.resizeTick = false;
+			});
+		}
+	}
 
+	function updatescroll() {
+		locoScroll.destroy()
+		initLocoScroll();
+	}
 }
+
 
 
 

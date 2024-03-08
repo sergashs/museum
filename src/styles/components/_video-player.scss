@@ -1,10 +1,17 @@
 .video-player {
   position: relative;
-  min-width: 70rem;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include breakpoint(xl, min) {
+    min-width: 70rem;
+  }
+
+  @include breakpoint(xl, max) {
+    height: 80vh;
+  }
 
   &::before {
     content: "";

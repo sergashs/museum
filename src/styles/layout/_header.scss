@@ -6,6 +6,10 @@
   padding-top: 3.4rem;
   z-index: 99;
 
+  @include breakpoint(md, max) {
+    padding-top: 2.5rem;
+  }
+
   .logo {
     display: inline-flex;
     font-size: 1.115rem;
@@ -13,10 +17,18 @@
     color: #dac7a3;
     text-decoration: none;
 
+    @include breakpoint(md, max) {
+      font-size: 0.7rem;
+    }
+
     .img-holder {
       display: inline-flex;
       max-width: 13.2rem;
       margin-right: 1.2rem;
+
+      @include breakpoint(md, max) {
+        max-width: 8.2rem;
+      }
 
       img {
         width: 100%;
@@ -32,6 +44,10 @@
     p {
       padding-top: 1.5rem;
       margin-bottom: 0;
+
+      @include breakpoint(md, max) {
+        padding-top: 1rem;
+      }
     }
   }
 
@@ -51,6 +67,10 @@
     display: flex;
     text-transform: uppercase;
     font-size: 1.4rem;
+
+    @include breakpoint(md, max) {
+      display: none;
+    }
 
     li {
       opacity: 0.5;
@@ -89,6 +109,10 @@
     list-style: none;
     display: flex;
 
+    @include breakpoint(xl, max) {
+      display: none;
+    }
+
     li {
       &:not(:last-child) {
         margin-right: 0.8rem;
@@ -121,11 +145,19 @@
     color: #aca28f;
     text-transform: uppercase;
 
+    @include breakpoint(md, max) {
+      font-size: 1.4rem;
+    }
+
     span {
       position: relative;
       display: block;
       width: 4.7rem;
       height: 1.6rem;
+
+      @include breakpoint(md, max) {
+        width: 3.7rem;
+      }
 
       &::after,
       &::before {
@@ -148,6 +180,10 @@
         right: 0;
         bottom: 0;
         width: 4.7rem;
+
+        @include breakpoint(md, max) {
+          width: 3.7rem;
+        }
       }
 
       i {
@@ -168,6 +204,10 @@
       margin-top: 0.3rem;
       margin-left: 1rem;
       font-style: normal;
+
+      @include breakpoint(md, max) {
+        min-width: 6.2rem;
+      }
 
       &.btn-close {
         display: none;

@@ -3,63 +3,41 @@
   display: flex;
   align-items: center;
   padding-top: 13.4rem;
-  padding-left: 61.1rem;
+  padding-left: 20.1rem;
   padding-right: 12vh;
   background: #2f2722;
   z-index: 1;
+
+  @include breakpoint(xl, max) {
+    padding-top: 10rem;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 30rem;
+  }
 
   .container {
     max-width: 100%;
   }
 
-  .block-preview {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(-30%, -50%);
-    max-width: 51.9rem;
-    padding: 9rem 2.3rem 9.2rem 5rem;
-    background: #2f2722;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -2.2rem;
-      width: 2.9rem;
-      height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg width='30' height='421' viewBox='0 0 30 421' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M29.4886 0C29.4886 19.33 16.2861 35 0 35V386C16.2861 386 29.4886 401.67 29.4886 421H29.5V0H29.4886Z' fill='%232F2722'/%3E%3C/svg%3E%0A");
-      background-size: contain;
-      background-repeat: no-repeat;
+  .row {
+    @include breakpoint(xl, max) {
+      flex-direction: column;
     }
 
-    .text-holder {
-      font-size: 1.6rem;
-      line-height: 1.6;
-      color: #aca28f;
-
-      p {
-        &:not(:last-child) {
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
-
-  .btn-preview {
-    svg {
-      transition: $transition;
-    }
-
-    &:hover {
-      svg {
-        transform: translateX(3.8rem);
+    .col-6 {
+      @include breakpoint(xl, max) {
+        width: 100%;
       }
     }
   }
 
   .card {
     display: flex;
+
+    @include breakpoint(lg, max) {
+      flex-direction: column;
+      text-align: center;
+    }
 
     .title {
       font-weight: 400;
@@ -89,7 +67,13 @@
     &.card-1,
     &.card-2 {
       .img-holder {
-        margin-right: 6.05rem;
+        @include breakpoint(lg, min) {
+          margin-right: 6.05rem;
+        }
+
+        @include breakpoint(lg, max) {
+          margin-bottom: 2rem;
+        }
       }
 
       .content-holder {
@@ -99,6 +83,10 @@
 
     &.card-1 {
       align-items: center;
+
+      @include breakpoint(lg, max) {
+        margin-bottom: 7rem;
+      }
 
       .title {
         margin-bottom: 1.2rem;
@@ -110,16 +98,37 @@
         margin-bottom: 2rem;
         font-size: 3.1rem;
         line-height: 1.39;
+
+        span {
+          font-size: 9.9rem;
+
+          @include breakpoint(lg, max) {
+            font-size: 7.5rem;
+          }
+        }
       }
 
       .img-holder {
         max-width: 48.6rem;
+
+        @include breakpoint(md, max) {
+          max-width: 38.6rem;
+        }
       }
     }
 
     &.card-2 {
-      transform: translate(-10%, -16%);
-      align-items: flex-end;
+      @include breakpoint(lg, min) {
+        align-items: flex-end;
+      }
+
+      @include breakpoint(xl, min) {
+        transform: translate(-10%, -16%);
+      }
+
+      @include breakpoint(lg, max) {
+        align-items: center;
+      }
 
       .content-holder {
         padding-bottom: 8.6rem;
@@ -128,6 +137,10 @@
       .img-holder {
         max-width: 44.1rem;
         transform: rotate(-1.86deg);
+
+        @include breakpoint(md, max) {
+          max-width: 34rem;
+        }
       }
     }
 
@@ -141,8 +154,19 @@
 
       .img-holder {
         max-width: 36.7rem;
-        margin-right: 6.2rem;
         transform: rotate(1.78deg);
+
+        @include breakpoint(lg, min) {
+          margin-right: 6.2rem;
+        }
+
+        @include breakpoint(lg, max) {
+          margin-bottom: 2rem;
+        }
+
+        @include breakpoint(md, max) {
+          max-width: 29rem;
+        }
       }
 
       .content-holder {
@@ -153,21 +177,25 @@
 
   .decor-1 {
     position: absolute;
-    bottom: 0;
-    left: -30.5rem;
-    width: 71.2rem;
-    height: 23.2rem;
-    background: url("#{$images}decor-02.png");
-  }
-
-  .decor-2 {
-    position: absolute;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
     width: 81.8rem;
     height: 50.8rem;
-    background: url("#{$images}img-06.png");
+    background-image: url("#{$images}img-06.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
     z-index: -1;
+
+    @include breakpoint(xl, max) {
+      width: 61.8rem;
+      height: 35.8rem;
+    }
+
+    @include breakpoint(lg, max) {
+      width: 41rem;
+      height: 28rem;
+    }
   }
 }

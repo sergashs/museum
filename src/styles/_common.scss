@@ -35,4 +35,8 @@
   font-weight: 400;
   font-size: 4.4rem;
   line-height: 1.4;
+
+  @include breakpoint(md, max) {
+    font-size: 3.1rem;
+  }
 }

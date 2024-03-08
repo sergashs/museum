@@ -1,17 +1,16 @@
 .page-home {
-  display: flex;
-  flex-direction: row;
   position: relative;
   width: 100%;
   height: auto;
 
+  @include breakpoint(xl, min) {
+    display: flex;
+    flex-direction: row;
+  }
+
   .section {
-    // max-height: 100vh;
-    // min-width: 100vw;
-    // height: 100vh;
     display: flex;
     position: relative;
-    // width: 100%;
     white-space: normal;
 
     &.section-1 {
@@ -19,15 +18,15 @@
     }
 
     &.section-2 {
-      min-width: 344.2vh;
+      @include breakpoint(xl, min) {
+        min-width: 344.2vh;
+      }
     }
 
     &.section-3 {
-      min-width: 374.2vh;
-    }
-
-    &.section-4 {
-      // min-width: 324.2vh;
+      @include breakpoint(xl, min) {
+        min-width: 374.2vh;
+      }
     }
   }
 }
