@@ -9,12 +9,13 @@
   background-size: cover;
   background-position: center;
   z-index: 2;
+  height: 100vh;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
 
   @include breakpoint(xl, max) {
     padding: 0;
     margin-right: 0;
-    min-height: 100vh;
-    min-height: calc(var(--vh, 1vh) * 100);
     display: flex;
     align-items: center;
     overflow: hidden;

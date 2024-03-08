@@ -115,10 +115,12 @@ function initSmoothScroll() {
 	initLocoScroll();
 
 
-	if (window.window > 12000) {
-		window.removeEventListener('resize', locoScroll.scroll.checkResize, false)
-		window.addEventListener('resize', () => resizescroll(), false);
-	}
+	window.addEventListener('resize', () => {
+		if (window.innerWidth > 1200) {
+			window.removeEventListener('resize', locoScroll.scroll.checkResize, false)
+			window.addEventListener('resize', () => resizescroll(), false);
+		}
+	})
 
 
 
