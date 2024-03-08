@@ -11,14 +11,24 @@ const isTouchScreen = navigator.userAgent.match(/Android/i) || navigator.userAge
 const gsapMatchMedia = gsap.matchMedia();
 
 document.addEventListener('DOMContentLoaded', () => {
+	correctVh();
 	fullScreenMenu();
 	initSmoothScroll();
 	videoPlayer();
 });
 
 window.addEventListener('resize', () => {
-
+	setTimeout(() => {
+		correctVh();
+	}, 50);
 });
+
+
+// correctVh
+function correctVh() {
+	let vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty("--vh", vh + "px");
+}
 
 function videoPlayer() {
 	const videoBlock = document.querySelectorAll('[video-player]');
@@ -105,10 +115,12 @@ function initSmoothScroll() {
 	initLocoScroll();
 
 
-	window.removeEventListener('resize', locoScroll.scroll.checkResize, false)
-	window.addEventListener('resize', () => resizescroll(), false);
+	if (window.window > 12000) {
+		window.removeEventListener('resize', locoScroll.scroll.checkResize, false)
+		window.addEventListener('resize', () => resizescroll(), false);
+	}
 
-	console.log(locoScroll.scroll)
+
 
 	function resizescroll() {
 		if (!locoScroll.scroll.resizeTick) {
